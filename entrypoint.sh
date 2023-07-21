@@ -1,5 +1,4 @@
 #!/bin/bash
-
 if [ -z $SCOUTER_IP ] ; then
 	exec java -jar guestbook.jar
 else
