@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url:'https://github.com/seon9604/guestbook.git'
+                git branch: 'master', url:'http://github.com/seon9604/guestbook.git'
             }
         }
         stage('Build') {
@@ -55,7 +55,7 @@ pipeline {
                 sshagent(credentials: ['Staging-PrivateKey']) {
                     sh "ssh -o StrictHostKeyChecking=no ec2-user@43.201.99.129 docker container rm -f guestbookapp"
                     sh "ssh -o StrictHostKeyChecking=no ec2-user@43.201.99.129 docker container run \
-                                        -d \
+                                        -d \ 
                                         --name=guestbookapp \
                                         --network=host \
                                         -e CONTEXT_PATH=/ \
