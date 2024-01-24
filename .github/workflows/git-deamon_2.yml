@@ -6,8 +6,6 @@ on:
     branches: [ master ]
     paths:
       - "**.yaml" # 특정 패턴과 일치하는 경우 workflow
-    paths-ignore: # = !paths, 제외 패턴
-      - "doc/**"
 jobs:
   build: # job name
     strategy: # 여러 환경에서 테스트/배포를 위해서 빌드 matrix를 구성
