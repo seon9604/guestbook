@@ -9,8 +9,8 @@ on:
 jobs:
   build: # job name
     strategy: # 여러 환경에서 테스트/배포를 위해서 빌드 matrix를 구성
-    #  matrix:
-    #    node-version: [10.x, 12.x] # version 지정
+      matrix:
+        node-version: [11.x] # version 지정
     runs-on: ubuntu-latest # ubuntu 머신 지정 (macos-latest / windows-latest 등)
     steps:
       - name: Checkout source code
