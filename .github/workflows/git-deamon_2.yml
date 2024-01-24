@@ -1,0 +1,22 @@
+name: exam-gitactions
+on:
+  push: # push event 발생 시점마다 job 실행
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    paths:
+      - "**.yaml" # 특정 패턴과 일치하는 경우 workflow
+    paths-ignore: # = !paths, 제외 패턴
+      - "doc/**"
+jobs:
+  build: # job name
+    strategy: # 여러 환경에서 테스트/배포를 위해서 빌드 matrix를 구성
+      matrix:
+        node-version: [10.x, 12.x] # version 지정
+    runs-on: ubuntu-latest # ubuntu 머신 지정 (macos-latest / windows-latest 등)
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2 # runner에 저장소 코드를 다운로드하고 특정 브랜치로 checkout
+      - name: My First Step
+        run: # 명령 실행
+          npm install
